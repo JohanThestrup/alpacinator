@@ -1,0 +1,1 @@
+INSERT INTO alpacas (name, weight, color, farm, created_on) VALUES (${name}, ${weight}, ${color}, ${farm}, NOW()) RETURNING alpaca_id;
