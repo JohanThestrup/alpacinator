@@ -1,23 +1,10 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
-
-const successMessage = {
-    header: "Success! 🔥",
-    body: "You successfully added an Alpaca! 🦙",
-};
-const errorMessage = {
-    header: "Error! 🚨",
-    body: "Something went wrong when submitting your Alpaca! 🦙",
-};
+import { successMessage, errorMessage } from "../data/messages";
+import NavigateButton from "../../shared/NavigateButton";
 
 function ModalSubmit({ onHide, show, isError }) {
-    const navigate = useNavigate();
-    function handleClick() {
-        navigate("/listalpaca");
-    }
-
     return (
         <Modal
             onHide={onHide}
@@ -36,9 +23,11 @@ function ModalSubmit({ onHide, show, isError }) {
                 <Button onClick={onHide} variant="secondary">
                     Close
                 </Button>
-                <Button onClick={handleClick} variant="primary">
-                    View list
-                </Button>
+                <NavigateButton
+                    path="listalpaca"
+                    text="View list"
+                    variant="primary"
+                />
             </Modal.Footer>
         </Modal>
     );

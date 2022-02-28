@@ -1,5 +1,5 @@
 import React from "react";
-import { farmMultiplierMap } from "../../utils";
+import { calculateAlpacaCost } from "../../utils";
 
 function AlpacaRow({ alpaca, selectAlpaca }) {
     return (
@@ -7,10 +7,7 @@ function AlpacaRow({ alpaca, selectAlpaca }) {
             <td>{alpaca.name}</td>
             <td>{alpaca.weight} kilograms</td>
             <td style={{ backgroundColor: alpaca.color }} role="alpaca-color" />
-            <td>
-                {Math.round(farmMultiplierMap.get(alpaca.farm) * alpaca.weight)}{" "}
-                SEK
-            </td>
+            <td>{calculateAlpacaCost(alpaca.weight, alpaca.farm)} SEK</td>
             <td>
                 <input
                     type="checkbox"

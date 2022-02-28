@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import config from "../config.json";
 
 export default function useFetch(url, initialState) {
     const [loading, setLoading] = useState(true);
@@ -10,7 +11,7 @@ export default function useFetch(url, initialState) {
         mounted.current = true;
         const getData = async () => {
             try {
-                const res = await fetch(`http://localhost:3000/api/${url}`);
+                const res = await fetch(`${config.api}/${url}`);
                 const json = await res.json();
                 if (mounted.current) {
                     setData(json);

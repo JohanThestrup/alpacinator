@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import useFetch from "./useFetch";
-import { farmMultiplierMap } from "../utils";
+import { calculateAlpacaCost } from "../utils";
 
 export default function useAlpacas() {
     const { data: alpacas, loading } = useFetch("getalpacas");
@@ -16,10 +16,7 @@ export default function useAlpacas() {
     useEffect(() => {
         function calculateTotalCost() {
             const cost = selectedAlpacas.reduce((acc, alp) => {
-                return (
-                    acc +
-                    Math.round(alp.weight * farmMultiplierMap.get(alp.farm))
-                );
+                return acc + calculateAlpacaCost(alp.weight, alp.farm);
             }, 0);
 
             setTotalCost(cost.toFixed(0));
