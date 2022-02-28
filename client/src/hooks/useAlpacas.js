@@ -3,7 +3,7 @@ import useFetch from "./useFetch";
 import { calculateAlpacaCost } from "../utils";
 
 export default function useAlpacas() {
-    const { data: alpacas, loading } = useFetch("getalpacas");
+    const { data: alpacas, loading, error } = useFetch("getalpacas", []);
     const [selectedAlpacas, setSelectedAlpacas] = useState([]);
     const [totalCost, setTotalCost] = useState(0);
     const [farmCount, setFarmCount] = useState({
@@ -55,5 +55,6 @@ export default function useAlpacas() {
         farmCount,
         alpacas,
         loading,
+        error,
     };
 }

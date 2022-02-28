@@ -1,8 +1,9 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
+import config from "../../config.json";
 
 export const server = setupServer(
-    rest.get("http://localhost:3000/api/getalpacas", (req, res, ctx) => {
+    rest.get(`${config.api}/getalpacas`, (req, res, ctx) => {
         return res(
             ctx.json([
                 {
@@ -27,7 +28,7 @@ export const server = setupServer(
 );
 
 export const emptyServer = setupServer(
-    rest.get("http://localhost:3000/api/getalpacas", (req, res, ctx) => {
+    rest.get(`${config.api}/getalpacas`, (req, res, ctx) => {
         return res(ctx.json([]));
     })
 );

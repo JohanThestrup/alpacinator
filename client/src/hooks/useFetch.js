@@ -4,7 +4,7 @@ import config from "../config.json";
 export default function useFetch(url, initialState) {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(initialState);
-    const [error, setError] = useState();
+    const [error, setError] = useState("");
     const mounted = useRef(true);
 
     useEffect(() => {
