@@ -22,7 +22,7 @@ export function calculateAlpacaCost(weight, farm) {
     return Math.round(weight * farmMultiplierMap.get(farm));
 }
 
-console.log(process.env.NODE_ENV);
+console.log(process.env.NODE_ENV, " REALLY!?");
 export const api =
     process.env.NODE_ENV === "production"
         ? config.api.production
