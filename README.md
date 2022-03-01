@@ -64,7 +64,7 @@ Run the following commands from inside the "alpacinator" folder:
      npm i
      npm start
     ```
-The server is then listening on: http://localhost:5432/
+The server is then listening on: http://localhost:3000/
 
 ### Running tests
 
