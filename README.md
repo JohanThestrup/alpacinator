@@ -1,10 +1,17 @@
 # Alpacinator 🦙
 
 Tiny application for calculating the cost for alpacas depending on from what farm they origin from.
+To save you the hassle of setting everything up I've deployed the application here: https://alpacinator-app.herokuapp.com/
+Have some patience on initial load since Heroku goes to sleep if the app hasn't been used in a while 😊
 
 ## My solution
 
 I wrote the application using a React front end and a small server using express.js that connects to a PostgreSQL database.
+The app has two views:
+1. A list that shows data about alpacas stored in the database.
+<img src="/screenshots/listalpaca_screenshot.jpg" alt="List view" title="The list view" width="600" />
+2. A form that lets the user add alpacas to the database.
+<img src="/screenshots/addalpaca_screenshot.jpg" alt="List view" title="The list view" width="600" />
 
 ## How to start
 
