@@ -1,3 +1,5 @@
+import config from "./config.json";
+
 const farmMultiplierMap = new Map([
     ["svenssonsAlpacor", 1.3],
     ["alpacacenter", 4],
@@ -19,3 +21,8 @@ export async function postData(url = "", data) {
 export function calculateAlpacaCost(weight, farm) {
     return Math.round(weight * farmMultiplierMap.get(farm));
 }
+
+export const api =
+    process.env.NODE_ENV === "production"
+        ? config.api.production
+        : config.api.development;

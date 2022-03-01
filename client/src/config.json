@@ -1,3 +1,6 @@
 {
-    "api": "http://localhost:3000/api"
+    "api": {
+        "development": "http://localhost:3000/api",
+        "production": "https://alpacinator-server.herokuapp.com/api"
+    }
 }

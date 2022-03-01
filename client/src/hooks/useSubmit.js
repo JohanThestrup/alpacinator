@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
-import { postData } from "../utils";
-import config from "../config.json";
+import { postData, api } from "../utils";
 import { yupObject } from "../validationSchema";
 
 export default function useSubmit() {
@@ -17,7 +16,7 @@ export default function useSubmit() {
         },
         validationSchema: yupObject,
         onSubmit: async (alpaca) => {
-            const url = `${config.api}/addalpaca`;
+            const url = `${api}/addalpaca`;
             try {
                 postData(url, alpaca);
                 setIsError(false);
